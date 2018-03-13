@@ -1,0 +1,35 @@
+.connexion_inscription {
+    width: 100vw;
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "connexion inscription";
+}
+
+.connexion {
+    background: grey;
+    grid-area: connexion;
+    border-right: 1px solid black;
+    padding-right: 10px;
+    height: 100%;
+    text-align: right;
+}
+
+.inscription {
+    background: grey;
+    grid-area: inscription;
+    border-left: 1px solid black;
+    padding-left: 10px;
+    height: 100%;
+    text-align: left;
+}
+
+input {
+    margin: 10px;
+    width: 55%;
+    text-align: center;
+}
+
+input:hover {
+    box-shadow: 4px 3px 4px #004d4d;
+}

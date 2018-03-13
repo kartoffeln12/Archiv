@@ -1,0 +1,119 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+#create {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+
+#view {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 75vw;
+}
+
+section {
+    background-color: khaki;
+}
+
+aside {
+    background: darkcyan;
+}
+
+.viewTemp > img {
+    height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+#zoneAffiche {
+    grid-area: 2/2/8/6;
+    background: white;
+}
+
+#zoneTitre {
+    grid-area: 2/8/3/14;
+    background: white;
+}
+
+#zoneLieu {
+    grid-area: 4/8/5/9;
+    background: white;
+}
+
+#zoneRenseignement {
+    grid-area: 4/10/5/14;
+    background: white;
+}
+
+#zoneDescription {
+    grid-area: 6/8/9/14;
+    overflow: auto;
+    background: white;
+}
+
+#bouton_view {
+    border: 1px solid grey;
+    border-radius: 5px;
+    background: #F8F8FF;
+}
+
+.saisie,
+.visu,
+#Ok,
+#Annuler {
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+.visu {
+    width: 35%;
+}
+
+button,
+input,
+select {
+    margin: 10px;
+    width: 55%;
+    text-align: center;
+}
+
+textarea {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 85%;
+    resize: none;
+}
+
+#Ok:hover,
+.visu:hover,
+button:hover {
+    box-shadow: 4px 3px 4px #004d4d;
+}
+
+.ui-helper-hidden-accessible {
+    display: none !important;
+}
+
+.ui-autocomplete {
+    list-style: none;
+}
+
+.ui-autocomplete li {
+    padding-left: 0.5em;
+    width: 7em;
+    background: white;
+    border-left: 0.1em solid grey;
+    border-bottom: 0.1em solid grey;
+}
+
+.ui-autocomplete li:hover {
+    font-weight: bold;
+}

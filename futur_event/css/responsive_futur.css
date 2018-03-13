@@ -1,0 +1,125 @@
+header,
+nav,
+section,
+footer {
+    /*défini le padding avec 1% du height de l'écran en haut et en bas,
+   1% du width de l'écran à gauche et à droite*/
+    padding: 1vh 1vw;
+    margin: 1vh 1vw;
+}
+
+body {
+    /*défini la hauteur du body à 100% de la hauteur de l'ecran*/
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /*parametre les enfants de body dans une grille*/
+    display: grid;
+    /*place 2 colonnes à la grille */
+    grid-template-columns: 1fr;
+    /*défini les zones de placement dans la grille avec un nom*/
+    grid-template-areas: "header " "section " "footer ";
+}
+
+header {
+    /*affecte la balise header dans la zone de la grille avec le nom header*/
+    grid-area: header;
+    height: 100px;
+}
+
+nav {
+    /*affecte la balise nav dans la zone de la grille avec le nom nav*/
+    grid-area: nav;
+    /*parametre les enfants de nav en flex*/
+    display: flex;
+    /*défini le comportement des enfants en row et warp*/
+    flex-flow: row wrap;
+    /*aligne horizontalement les enfants en space-around*/
+    justify-content: space-around;
+    /*aligne verticalement les enfants en center*/
+    align-items: center;
+
+}
+
+nav a {
+    font-size: 1.2em;
+}
+
+section {
+    /*affecte la balise section dans la zone de la grille avec le nom section*/
+    grid-area: section;
+    /*parametre la hauteur du header*/
+    height: 1fr
+    /*parametre les enfants de section en flex*/
+    display: flex;
+    /*défini le comportement des enfants en row et warp*/
+    flex-flow: row wrap;
+    /*aligne horizontalement les enfants en space-between*/
+    justify-content: space-around;
+}
+
+
+footer {
+    grid-area: footer;
+    height: 50px;
+}
+
+
+
+
+
+
+
+/* écran large 
+
+@media screen and (min-width: 1200px) {}
+
+/* tablet de portrait à landscape et desktop 
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+    section {
+        flex-flow: column;
+        justify-content: center;
+    }
+    article {
+        width: 80%;
+        padding-left: 50px;
+    }
+    iframe {
+        justify-content: center;
+    }
+}
+
+/* smartphone landscape à tablet portrait 
+
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "nav" "section" "aside" "footer";
+    }
+    nav a {
+        font-size: 2em;
+    }
+    section {
+        display: flex;
+        flex-flow: column;
+        padding-left: 15%;
+    }
+    article {
+        padding: 2%;
+        width: 80%;
+    }
+    iframe {
+        justify-content: center;
+    }
+
+    article p {
+        width: 95%;
+    }
+    aside h1 {
+        text-align: center;
+    }
+
+
+}
+*/

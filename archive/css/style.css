@@ -1,0 +1,39 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+#resultat {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 90vw;
+}
+
+#separateur_filtre {
+    width: 10vw;
+}
+
+form {
+    width: 40vw;
+    text-align: center;
+}
+
+#recherche {
+    width: 20vw;
+}
+
+.affiche {
+	margin: 10px;
+}
+
+#filtre {
+	margin-bottom: 2vh;
+	display: flex;
+}
+
+@media (max-width: 818px) {
+    #resultat {
+        justify-content: center;
+    }
