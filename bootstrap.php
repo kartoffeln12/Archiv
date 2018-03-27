@@ -14,4 +14,6 @@ try {
 }
 
 require 'classes/events.php';
+$Events = new Events();
+
 ?>

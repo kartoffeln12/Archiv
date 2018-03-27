@@ -43,10 +43,10 @@ if(isset($_FILES['upload'])){
         		$filename = $nom . ".{$extension_upload}";
         		$nom_saisie = isset($_POST['upload_nom']) ? substr($_POST['upload_nom'], 0, 50) : NULL;
         		$description_saisie = isset($_POST['upload_description']) ? substr($_POST['upload_description'], 0, 255) : NULL;
-        		$user_id = $_SESSION['Auth']['id'];
-
+        		$user_fk = $_SESSION['Auth']['id'];
+                //prépare et insert le fichier dans le dossier /upload et ses propriétés dans la bdd
         		$sql = $bdd->prepare("INSERT INTO upload(crea_page_id, user_id, upload_nom, upload_description, upload_filename) VALUES (?,?,?,?,?)");
-        		$sql->execute(array($crea_page_id, $user_id, $nom_saisie, $description_saisie, $filename));
+        		$sql->execute(array($crea_page_id, $user_fk, $nom_saisie, $description_saisie, $filename));
 
         	} else {
         		

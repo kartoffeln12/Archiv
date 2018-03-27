@@ -1,0 +1,53 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+#resultat {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 90vw;
+}
+
+#separateur_filtre {
+    width: 10vw;
+}
+
+form {
+    width: 40vw;
+    text-align: center;
+}
+
+.connect {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
+input:hover,button:hover, .connect:hover, .deconnection:hover {
+    box-shadow: 4px 3px 4px #D3D3D3;
+}
+
+#recherche {
+    width: 20vw;
+}
+
+.affiche {
+	margin: 10px;
+}
+
+#filtre {
+	margin-bottom: 2vh;
+	display: flex;
+}
+
+#filtre input {
+    width: auto;
+}
+
+@media (max-width: 818px) {
+    #resultat {
+        justify-content: center;
+    }

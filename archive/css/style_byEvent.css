@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.connect {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
 .resultat {
     margin: 30px;
 }

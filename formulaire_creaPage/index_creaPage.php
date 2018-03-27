@@ -6,7 +6,7 @@ require '../bootstrap.php';
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_creaPage.css">
     <link rel="stylesheet" type="text/css" href="css/responsive_creaPage.css">
     <title>création event</title>
 </head>
@@ -38,7 +38,7 @@ include('../header.php');
                 <br />
                 <hr> Renseignements : <br />
                 <label for="jour"></label><input name="jour" id="jour" type="date" class="saisie_jour" required /></label>
-                <label for="horaire"><input name="horaire" id="horaire" type="time" class="saisie_horaire"></label>
+                <label for="horaire"><input name="horaire" id="horaire" type="time" class="saisie_horaire" required></label>
                 <br />
                 <hr>
 
@@ -63,7 +63,7 @@ include('../header.php');
     </section>
     <?php }
 	else {
-	$message = "vous devez être connecté";
+	$message = "vous devez être connecté pour créer votre événement.";
 	echo "<script type='text/javascript'>alert('$message');
 		window.location.replace('../index.php');
 		</script>";

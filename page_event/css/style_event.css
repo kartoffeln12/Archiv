@@ -9,6 +9,12 @@ form {
     padding-right: 10px;
 }
 
+.connect {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
 #bloc_event {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -35,11 +41,11 @@ form {
 }
 
 #zoneLieu {
-    grid-area: 3/8/4/9;
+    grid-area: 3/8/4/11;
 }
 
 #zoneRenseignement {
-    grid-area: 3/10/4/14;
+    grid-area: 3/12/4/14;
 }
 
 #zoneDescription {

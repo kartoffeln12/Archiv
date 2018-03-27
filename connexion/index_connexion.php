@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_connexion.css">
     <title>connexion</title>
 </head>
 
@@ -16,6 +16,7 @@
 	} else {
 	?> Inscription
     <form action="signin.php" method="POST">
+        <input type="text" placeholder="Pseudo" name="pseudo">
         <input type="text" placeholder="Adresse email" name="login" required>
         <input type="password" placeholder="Mot de passe" name="password" required>
         <input type="submit" value="S'inscrire">

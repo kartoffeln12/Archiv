@@ -42,12 +42,12 @@ aside {
 }
 
 #zoneLieu {
-    grid-area: 4/8/5/9;
+    grid-area: 4/8/5/11;
     background: white;
 }
 
 #zoneRenseignement {
-    grid-area: 4/10/5/14;
+    grid-area: 4/12/5/14;
     background: white;
 }
 
@@ -80,8 +80,14 @@ aside {
 button,
 input,
 select {
-    margin: 10px;
+    margin: 3%;
     width: 55%;
+    text-align: center;
+}
+
+.connect, .deconnection {
+    margin: 10px;
+    width: auto;
     text-align: center;
 }
 

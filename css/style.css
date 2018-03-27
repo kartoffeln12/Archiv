@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 .connexion_inscription {
     width: 100vw;
     visibility: hidden;
@@ -12,7 +18,7 @@
     border-right: 1px solid black;
     padding-right: 10px;
     height: 100%;
-    text-align: right;
+    text-align: right;  
 }
 
 .inscription {
@@ -26,10 +32,30 @@
 
 input {
     margin: 10px;
-    width: 55%;
+    width: 40%;
     text-align: center;
 }
 
-input:hover {
-    box-shadow: 4px 3px 4px #004d4d;
+.connect, .deconnection {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
+.userEvents, .userPhotos {
+    width: 30%;
+}
+
+.userPhoto img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+button  {
+    margin: 25px;
+    width: 30%;
+    text-align: center;
+}
+button:hover, .connect:hover, .deconnection:hover {
+    box-shadow: 4px 3px 4px #D3D3D3;
 }

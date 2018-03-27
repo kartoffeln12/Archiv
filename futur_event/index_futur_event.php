@@ -7,7 +7,7 @@ require '../bootstrap.php'
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/responsive_futur.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style_futur.css">
         <title>futur event</title>
     </head>
 
@@ -20,7 +20,7 @@ include('../header.php');
         <section>
             <div id="resultat">
                 <?php
-    $futurEvents = rechercheFuturEvents($_GET);
+    $futurEvents = $Events->rechercheFuturEvents($_GET);
 	while ($futurEvent = $futurEvents->fetch())
     {
         echo '<div class="affiche"><a href="../page_event/index_event.php?id='. $futurEvent['id'] . '"><img src=" ' . $futurEvent['affiche'] . ' " title="Affiche ' . $futurEvent['titre'] .'" alt="Affiche ' . $futurEvent['titre'] .'" height="240" width="180"></a></div>';

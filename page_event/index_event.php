@@ -1,18 +1,15 @@
 <?php 
 require '../bootstrap.php';
 // Récupération des données du form creaPage
-$donnee = showEvent($_GET);
-/*$reponse = $bdd->query('SELECT * FROM `crea_page` WHERE `id` = ' . (int) $_GET['id']);
-$donnee = $reponse->fetch();
-$reponse->closeCursor();*/
+$donnee = $Events->showEvent($_GET);
 ?>
 
 <!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive_upload.css">
+    <link rel="stylesheet" type="text/css" href="css/style_event.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive_event.css">
     <title>page event</title>
 </head>
 
@@ -37,7 +34,7 @@ include('../header.php');
             </div>
             <div id="zoneRenseignement" class="zone">
                 <?php 
-        echo  $donnee['jour'] . ' à ' . $donnee['horaire'] ;
+        echo  $donnee['jour'] . '<br /> à ' . $donnee['horaire'] ;
         ?>
             </div>
             <div id="zoneLieu" class="zone">
@@ -73,6 +70,9 @@ include('../header.php');
         <?php
   }else{
     echo " <a href='../connexion/index_connexion.php'><input type='button' value='Upload'></a>";
+    $message = "vous devez être connecté pour pouvoir uploadé des photos de cet événement.";
+    echo "<script type='text/javascript'>alert('$message');
+        </script>";
   }
   ?>
     </aside>
