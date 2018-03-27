@@ -29,8 +29,7 @@ class Events {
                 WHERE jour <= CURDATE() 
                 ORDER BY annee DESC, mois DESC";
         } else {
-            $q = "SELECT id, affiche, titre 
-                FROM crea_page 
+            $q = "SELECT id, affiche, titre FROM crea_page 
                 WHERE jour <= CURDATE()
                 ORDER BY jour DESC";   
         }
