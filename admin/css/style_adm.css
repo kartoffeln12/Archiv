@@ -1,0 +1,70 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.connexion_inscription {
+    margin-top: 5%;
+    height: 100%;
+    width: 97vw;
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "connexion inscription";
+}
+
+.connexion {
+    background: grey;
+    grid-area: connexion;
+    border-right: 1px solid black;
+    padding-right: 15px;
+    height: 100%;
+    text-align: right;  
+}
+
+.inscription {
+    background: grey;
+    grid-area: inscription;
+    border-left: 1px solid black;
+    padding-left: 15px;
+    height: 100%;
+    text-align: left;
+}
+
+input {
+    margin: 10px;
+    width: 40%;
+    text-align: center;
+}
+
+.connect, .deconnection {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
+.userEvents, .userPhotos {
+    width: 30%;
+}
+
+.userPhoto img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+section {
+    background-image: url(../page_event/uploads/fond_acceuil.jpg);
+    background-size: 90vw;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button  {
+    margin: 25px;
+    width: 30%;
+    text-align: center;
+}
+button:hover, .connect:hover, .deconnection:hover {
+    box-shadow: 4px 3px 4px #D3D3D3;
+}

@@ -1,30 +1,14 @@
 <?php 
-require '../bootstrap.php'; 
-?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style_creaPage.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive_creaPage.css">
-    <title>création event</title>
-</head>
+$nav_en_cours = 'crea_page';
 
-<body>
-    <header>
-        <?php
-include('../header.php');
-?>
-    </header>
-    <?php 
 	if (isset($_SESSION['Auth']['login']) && !empty($_SESSION['Auth']['login'])) {
 ?>
-    <aside>
+        <div id="resultat_creaPage">
         <div id="create">
-            <form name="creaPage" action="envoiPage.php" method="post" enctype="multipart/form-data">
+            <form id="form_creaPage" name="creaPage" action="formulaire_creaPage/envoiPage.php" method="post" enctype="multipart/form-data">
                 <label for="affiche"> Url de l'Affiche : </label><br />
-                <input name="affiche" id="affiche" type="url" class="saisie_url" required />
+                <input name="affiche" id="affiche" type="url" class="saisie_url" placeholder="http://monAffiche.img" required />
                 <br />
                 <hr>
 
@@ -34,11 +18,11 @@ include('../header.php');
                 <hr>
 
                 <label for="lieu"> Lieu de l'Event : </label><br />
-                <input name="lieu" type="text" class="saisie_lieu" required />
+                <input name="lieu" type="text" id="saisie_lieu" required />
                 <br />
                 <hr> Renseignements : <br />
-                <label for="jour"></label><input name="jour" id="jour" type="date" class="saisie_jour" required /></label>
-                <label for="horaire"><input name="horaire" id="horaire" type="time" class="saisie_horaire" required></label>
+                <label for="jour"><input name="jour" id="jour" type="date" class="saisie_jour" required /></label>
+                <label for="horaire"><input name="horaire" id="horaire" type="time" class="saisie_horaire" value="20:00" required></label>
                 <br />
                 <hr>
 
@@ -51,8 +35,7 @@ include('../header.php');
                 <input type="submit" id="Ok" />
             </form>
         </div>
-    </aside>
-    <section>
+
         <div id="view">
             <div id="zoneAffiche" class="zone">Affiche</div>
             <div id="zoneTitre" class="zone">Titre</div>
@@ -60,7 +43,7 @@ include('../header.php');
             <div id="zoneLieu" class="zone">Lieu</div>
             <div id="zoneDescription" class="zone">Description</div>
         </div>
-    </section>
+    </div>
     <?php }
 	else {
 	$message = "vous devez être connecté pour créer votre événement.";
@@ -69,9 +52,3 @@ include('../header.php');
 		</script>";
 	}
 	?>
-    <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
-
-</html>

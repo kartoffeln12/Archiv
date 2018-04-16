@@ -5,34 +5,44 @@
 }
 
 .connexion_inscription {
-    width: 100vw;
+    margin-top: 5%;
+    height: 100%;
+    width: 97vw;
     visibility: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "connexion inscription";
 }
 
+.connexion_inscription input {
+    width: 40%;
+}
+
+.connexion_inscription h2 {
+    color: red;
+}
+
 .connexion {
     background: grey;
     grid-area: connexion;
     border-right: 1px solid black;
-    padding-right: 10px;
+    padding-right: 15px;
     height: 100%;
-    text-align: right;  
+    text-align: center; 
 }
+
 
 .inscription {
     background: grey;
     grid-area: inscription;
     border-left: 1px solid black;
-    padding-left: 10px;
+    padding-left: 15px;
     height: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 input {
     margin: 10px;
-    width: 40%;
     text-align: center;
 }
 
@@ -51,11 +61,414 @@ input {
     min-width: 100%;
 }
 
+body {
+    background-image: url(../page_event/uploads/fond_acceuil2.jpg);
+    object-fit: cover;
+    background-position: 50% 85%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+header,footer {
+    background-color: #840C15;
+    list-style: none;
+    color: white;
+}
+
+nav a {
+    margin: 3px;
+    display: block;
+    border: 2px solid #000000;
+    padding: 0 5vw;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+
+    
+}
+
+nav a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 button  {
     margin: 25px;
     width: 30%;
     text-align: center;
 }
 button:hover, .connect:hover, .deconnection:hover {
+    box-shadow: 4px 3px 4px #5C080E;
+}
+
+
+/* ARCHIVE-ARCHIVE-ARCHIVE-ARCHIVE-ARCHIVE-ARCHIVE-ARCHIVE-ARCHIVE-ARCHIVE-ARCHIVE- */
+
+#resultat {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 90vw;
+}
+
+#separateur_filtre {
+    width: 10vw;
+}
+
+#resultat form {
+    width: 40vw;
+    margin-bottom: 10vh;
+    text-align: center;
+    margin: 0 8%;
+
+}
+
+.connect, .deconnection {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
+input:hover,button:hover, .connect:hover, .deconnection:hover {
     box-shadow: 4px 3px 4px #D3D3D3;
 }
+
+#search {
+    width: 20vw;
+}
+
+.affiche {
+    margin: 10px;
+}
+
+#filtre {
+    margin-bottom: 2vh;
+    display: flex;
+}
+
+#filtre input {
+    width: auto;
+}
+
+/* CREAPAGE-CREAPAGE-CREAPAGE-CREAPAGE-CREAPAGE-CREAPAGE-CREAPAGE-CREAPAGE-CREAPAGE- */
+
+#resultat_creaPage {
+    display: flex;
+    width: 97vw;
+    height: 90vh;
+    border: solid 1px grey;
+}
+#resultat h2 {
+    color: red;
+}
+
+#form_creaPage {
+    width: 17vw;
+}
+
+#create {
+    padding-left: 5px;
+    padding-right: 10px;
+    background: darkcyan;
+}
+
+#view {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 80vw;
+    background-color: khaki;
+}
+
+.viewTemp > img {
+    height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+#zoneAffiche {
+    grid-area: 2/2/8/6;
+    background: white;
+}
+
+#zoneTitre {
+    grid-area: 2/8/3/14;
+    background: white;
+}
+
+#zoneLieu {
+    grid-area: 4/8/5/11;
+    background: white;
+}
+
+#zoneRenseignement {
+    grid-area: 4/12/5/14;
+    background: white;
+}
+
+#zoneDescription {
+    grid-area: 6/8/9/14;
+    overflow: auto;
+    background: white;
+}
+
+#bouton_view {
+    border: 1px solid grey;
+    border-radius: 5px;
+    background: #F8F8FF;
+}
+
+.saisie,
+.visu,
+#Ok,
+#Annuler {
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+.visu {
+    width: 35%;
+}
+
+#resultat_creaPage.button,
+#resultat_creaPage.input,
+#resultat_creaPage.select {
+    margin: 3%;
+    width: 55%;
+    text-align: center;
+}
+
+.connect, .deconnection {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
+#resultat_creaPage.textarea {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 85%;
+    resize: none;
+}
+
+#Ok:hover,
+.visu:hover,
+button:hover {
+    box-shadow: 4px 3px 4px #004d4d;
+}
+
+.ui-helper-hidden-accessible {
+    display: none !important;
+}
+
+.ui-autocomplete {
+    list-style: none;
+}
+
+.ui-autocomplete li {
+    padding-left: 0.5em;
+    width: 7em;
+    background: white;
+    border-left: 0.1em solid grey;
+    border-bottom: 0.1em solid grey;
+}
+
+.ui-autocomplete li:hover {
+    font-weight: bold;
+}
+
+#futurEvent, #archive {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 90vw;
+}
+
+/* ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT-ByEVENT- */
+
+
+#resultat_byEvent {
+    margin: 30px;
+}
+
+#photo_flex {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    margin: -2.5px;
+}
+
+.photo:after {
+    content: '';
+    flex-grow: 999999999;
+    min-width: 220px;
+    height: 0;
+}
+
+.photo > * {
+    position: relative;
+    display: block;
+    height: 220px;
+    margin: 2.5px;
+    flex-grow: 1;
+}
+
+.photo > * > img {
+    height: 220px;
+    object-fit: cover;
+    max-width: 100%;
+    min-width: 100%;
+    vertical-align: bottom;
+}
+
+.photo.photo-margin {
+    margin: 2.5px;
+}
+
+
+/* PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT-PageEVENT- */
+
+#resultat_page_event {
+    background-color:  rgba(112, 112, 112, 0.7);
+    padding-top: 5%;
+    display: flex;
+    width: 97vw;
+    height: 90vh;
+    border: solid 1px grey;
+}
+
+#form_page_event {
+    width: 20vw;
+    text-align: right;
+    padding-right: 2vw;
+}
+
+
+#bloc_event {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    background-color: ;
+    height: 100%;
+    padding: 10px;
+}
+
+#zoneAfficheDef > img {
+    height: 100%;
+    object-fit: scale-down;
+    max-width: 100%;
+    min-width: 100%;
+    vertical-align: top;
+}
+
+#zoneAfficheDef {
+    grid-area: 1/2/7/6;
+}
+
+#zoneTitreDef {
+    grid-area: 1/8/2/14;
+}
+
+#zoneLieuDef {
+    grid-area: 3/8/4/11;
+}
+
+#zoneRenseignementDef {
+    grid-area: 3/12/4/14;
+}
+
+#zoneDescriptionDef {
+    grid-area: 5/8/8/14;
+    overflow: auto;
+}
+
+
+
+
+
+@media (max-width: 818px) {
+    
+    #resultat {
+        justify-content: center;
+    }
+
+    #resultat_byEvent {
+        margin: 00px;
+    }
+    .photo {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        margin: -2.5px;
+    }
+    .photo:after {
+        content: '';
+        flex-grow: 999999999;
+        min-width: 160px;
+        height: 0;
+    }
+    .photo > * {
+        position: relative;
+        display: block;
+        height: 160px;
+        margin: 2.5px;
+        flex-grow: 1;
+    }
+    .photo > * > img {
+        height: 160px;
+        object-fit: cover;
+        max-width: 100%;
+        min-width: 100%;
+        vertical-align: bottom;
+    }
+    .photo.photo-margin {
+        margin: 2.5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .photo {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        margin: -2.5px;
+    }
+    .photo:after {
+        content: '';
+        flex-grow: 999999999;
+        min-width: 100px;
+        height: 0;
+    }
+    .photo > * {
+        position: relative;
+        display: block;
+        height: 100px;
+        margin: 2.5px;
+        flex-grow: 1;
+    }
+    .photo > * > img {
+        height: 100px;
+        object-fit: cover;
+        max-width: 100%;
+        min-width: 100%;
+        vertical-align: bottom;
+    }
+    .photo.photo-margin {
+        margin: 2.5px;
+    }
+}
+
+

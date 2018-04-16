@@ -66,7 +66,6 @@ class Events {
     function photosEvents($request) 
     {
         global $bdd;
-
         $reponse = $bdd->query('SELECT upload_filename, user.login
             FROM upload 
                 INNER JOIN crea_page ON upload.crea_page_id=crea_page.id 
@@ -162,21 +161,41 @@ class Events {
      */
     function createEvent($request) 
     {
+        global $bdd;
+
         $affiche = isset($request['affiche']) ? $request['affiche'] : NULL;
         $titre = isset($request['titre']) ? $request['titre'] : NULL;
         $lieu = isset($request['lieu']) ? $request['lieu'] : NULL;
         $horaire = isset($request['horaire']) ? $request['horaire'] : NULL;
         $jour = isset($request['jour']) ? $request['jour'] : NULL;
         $description = isset($request['description']) ? substr($request['description'], 0, 255) : NULL;
+        $user_id = $_SESSION['Auth']['id'];        
 
-        $sql = $bdd->prepare("INSERT INTO crea_page(affiche, titre, lieu, horaire, jour, description) VALUES (?,?,?,?,?,?)");
-        $sql->execute(array($affiche, $titre, $lieu, $horaire, $jour, $description));
+        $sql = $bdd->prepare("INSERT INTO crea_page(affiche, titre, lieu, horaire, jour, description, user_id, date_create) VALUES (?,?,?,?,?,?,?,NOW())");
+        $sql->execute(array($affiche, $titre, $lieu, $horaire, $jour, $description, $user_id));
         $id = $bdd->lastInsertId();
 
         return $id;
     }   
+
+    /**
+     * affiche les events dont les lieux ne sont pas (encore) saisis dans la bdd.
+     *
+     * @param Array $request Un tableau de données.
+     *
+     * @return $reponse.
+     */
+    function outBdd($request) 
+    {
+        global $bdd;
+
+        $reponse = $bdd->query('SELECT * FROM `crea_page` WHERE lieu NOT IN (SELECT nom_lieu FROM lieux)');
+        $donnee = $reponse->fetch();
+
+        return $reponse;
+
+
+    }
+
+
 }
-
-
-
-?>

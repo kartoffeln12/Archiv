@@ -1,34 +1,27 @@
 <?php
-require '../bootstrap.php'
-?>
-    <!DOCTYPE html>
-    <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/responsive_futur.css">
-        <link rel="stylesheet" href="css/style_futur.css">
-        <title>futur event</title>
-    </head>
-
-    <body>
-        <header>
-            <?php
-include('../header.php');
+$nav_en_cours = 'upload';
 ?>
-        </header>
-        <section>
-            <div id="resultat">
+
+            <div id="resultat_futur">
+            Evénements à venir :  <br />
+            <div id="futurEvent">
                 <?php
     $futurEvents = $Events->rechercheFuturEvents($_GET);
 	while ($futurEvent = $futurEvents->fetch())
     {
-        echo '<div class="affiche"><a href="../page_event/index_event.php?id='. $futurEvent['id'] . '"><img src=" ' . $futurEvent['affiche'] . ' " title="Affiche ' . $futurEvent['titre'] .'" alt="Affiche ' . $futurEvent['titre'] .'" height="240" width="180"></a></div>';
+        echo '<div class="affiche"><a href="index.php?page=index_event&id='. $futurEvent['id'] . '"><img src=" ' . $futurEvent['affiche'] . ' " title="Affiche ' . $futurEvent['titre'] .'" alt="Affiche ' . $futurEvent['titre'] .'" height="240" width="180"></a></div>';
     }
 	?>
-            </div>
-        </section>
-        <footer></footer>
-    </body>
+            </div><br />
 
-    </html>
+            Evénements archivés :  <br />
+            <div id="archive">
+                <?php
+    $events = $Events->recherche($_POST);
+    while ($event = $events->fetch())
+    {    echo '<div class="affiche"><a href="index.php?page=index_event&id='. $event['id'] . '"><img src=" ' . $event['affiche'] . ' " title="Affiche ' . $event['titre'] .'" alt="Affiche ' . $event['titre'] .'" height="240" width="180"></a></div>'; 
+    }
+    ?>
+            </div>
+        </div>

@@ -1,29 +1,14 @@
 <?php
-require '../bootstrap.php';
+$nav_en_cours = 'byEvent';
 ?>
 
-    <!DOCTYPE html>
-    <html lang="fr">
-
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/responsive_archive.css">
-        <link rel="stylesheet" href="css/style_byEvent.css">
-        <title>archive by event</title>
-    </head>
-
-    <body>
-        <header>
-            <?php
-include('../header.php');
-?>
-        </header>
-        <section>
-            <div id="resultat" class="resultat">
-                <div class="photo photo-margin">
+       
+            <div id="resultat_byEvent" class="resultat">
+                <div class="photo photo-margin" id="photo_flex">
                     <?php
                 
     $photos = $Events->photosEvents($_GET);
+
     while ($photo = $photos->fetch())
     {
         echo '<a href="#"><img src="../page_event/uploads/' . $photo['upload_filename'] . ' " title ="photo archivée par ' . $photo['login'] . '" alt="photo archivée"></a>';
@@ -32,8 +17,5 @@ include('../header.php');
 	?>
                 </div>
             </div>
-        </section>
-        <footer></footer>
-    </body>
-
-    </html>
+        
+       

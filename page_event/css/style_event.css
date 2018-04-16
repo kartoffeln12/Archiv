@@ -4,16 +4,11 @@
     box-sizing: border-box;
 }
 
-form {
+#form_page_event {
     text-align: right;
     padding-right: 10px;
 }
 
-.connect {
-    margin: 10px;
-    width: auto;
-    text-align: center;
-}
 
 #bloc_event {
     display: grid;
@@ -24,7 +19,7 @@ form {
     padding: 10px;
 }
 
-#zoneAffiche > img {
+#zoneAfficheDef > img {
     height: 100%;
     object-fit: scale-down;
     max-width: 100%;
@@ -32,23 +27,23 @@ form {
     vertical-align: top;
 }
 
-#zoneAffiche {
+#zoneAfficheDef {
     grid-area: 1/2/7/6;
 }
 
-#zoneTitre {
+#zoneTitreDef {
     grid-area: 1/8/2/14;
 }
 
-#zoneLieu {
+#zoneLieuDef {
     grid-area: 3/8/4/11;
 }
 
-#zoneRenseignement {
+#zoneRenseignementDef {
     grid-area: 3/12/4/14;
 }
 
-#zoneDescription {
+#zoneDescriptionDef {
     grid-area: 5/8/8/14;
     overflow: auto;
 }

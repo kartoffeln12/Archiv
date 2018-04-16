@@ -49,7 +49,7 @@ $(function () {
 
     /*Gére l'autocompletion du champs #lieu*/
     $('#saisie_lieu').autocomplete({
-        source: '../formulaire_creaPage/autocomplete.php',
+        source: 'formulaire_creaPage/autocomplete.php',
         minLength: 1
     });
 

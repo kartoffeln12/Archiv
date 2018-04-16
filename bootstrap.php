@@ -7,7 +7,8 @@ define('DSN', 'mysql:host=db_Projet;dbname=projet');
 define('USER', 'quentin');
 define('MDP', '#grab12');
 
-} else {define('DSN', 'mysql:host=localhost;dbname=projet');
+} else {
+define('DSN', 'mysql:host=localhost;dbname=projet');
 define('USER', 'root');
 define('MDP', '');
 }
