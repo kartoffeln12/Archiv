@@ -49,7 +49,8 @@ if(isset($_FILES['upload'])){
         		$sql->execute(array($crea_page_id, $user_id, $nom_saisie, $description_saisie, $filename));
 
         	} else {
-        		
+                echo $erreur . '<br />';
+        		var_dump($_FILES['upload']['error']);
         		exit('Pas de fichier ?');
         	}
 }

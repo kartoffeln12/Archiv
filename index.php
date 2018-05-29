@@ -6,9 +6,10 @@ require 'bootstrap.php';
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive_index.css">
-    <title>acceuil</title>
+    <title>Arch-Event</title>
 </head>
 
 <body>
@@ -41,13 +42,14 @@ switch ($page) {
     case $page == 'index_event':
         include('page_event/index_event.php');
         break;
-        case $page == 'mon_compte':
+    case $page == 'mon_compte':
         include('admin/mon_compte.php');
         break;
-        case $page == 'admin':
+    case $page == 'admin':
         include('admin/index_admin.php');
         break;
     default: echo '';
+        break;
 
 }
         

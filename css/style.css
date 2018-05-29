@@ -11,7 +11,7 @@
     visibility: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "connexion inscription";
+    grid-template-areas: "inscription connexion";
 }
 
 .connexion_inscription input {
@@ -25,7 +25,7 @@
 .connexion {
     background: grey;
     grid-area: connexion;
-    border-right: 1px solid black;
+    border-left: 1px solid black;
     padding-right: 15px;
     height: 100%;
     text-align: center; 
@@ -35,7 +35,7 @@
 .inscription {
     background: grey;
     grid-area: inscription;
-    border-left: 1px solid black;
+    border-right: 1px solid black;
     padding-left: 15px;
     height: 100%;
     text-align: center;
@@ -70,7 +70,7 @@ body {
 }
 
 header,footer {
-    background-color: #840C15;
+    background-color: #D9534F;
     list-style: none;
     color: white;
 }
@@ -79,12 +79,10 @@ nav a {
     margin: 3px;
     display: block;
     border: 2px solid #000000;
-    padding: 0 5vw;
+    padding: 0 3vw;
     border-radius: 5px;
     color: white;
     text-decoration: none;
-
-    
 }
 
 nav a:hover {
@@ -107,8 +105,9 @@ button  {
     width: 30%;
     text-align: center;
 }
+
 button:hover, .connect:hover, .deconnection:hover {
-    box-shadow: 4px 3px 4px #5C080E;
+    box-shadow: 2px 1px 2px #5C087E;
 }
 
 
@@ -133,12 +132,6 @@ button:hover, .connect:hover, .deconnection:hover {
 
 }
 
-.connect, .deconnection {
-    margin: 10px;
-    width: auto;
-    text-align: center;
-}
-
 input:hover,button:hover, .connect:hover, .deconnection:hover {
     box-shadow: 4px 3px 4px #D3D3D3;
 }
@@ -154,6 +147,7 @@ input:hover,button:hover, .connect:hover, .deconnection:hover {
 #filtre {
     margin-bottom: 2vh;
     display: flex;
+    align-items: center;
 }
 
 #filtre input {
@@ -179,7 +173,7 @@ input:hover,button:hover, .connect:hover, .deconnection:hover {
 #create {
     padding-left: 5px;
     padding-right: 10px;
-    background: darkcyan;
+    background: #5BC0DE;
 }
 
 #view {
@@ -187,7 +181,7 @@ input:hover,button:hover, .connect:hover, .deconnection:hover {
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(8, 1fr);
     width: 80vw;
-    background-color: khaki;
+    background: #F0AD4E;
 }
 
 .viewTemp > img {
@@ -197,7 +191,7 @@ input:hover,button:hover, .connect:hover, .deconnection:hover {
 }
 
 #zoneAffiche {
-    grid-area: 2/2/8/6;
+    grid-area: 2/2/7/6;
     background: white;
 }
 
@@ -217,7 +211,7 @@ input:hover,button:hover, .connect:hover, .deconnection:hover {
 }
 
 #zoneDescription {
-    grid-area: 6/8/9/14;
+    grid-area: 6/8/8/14;
     overflow: auto;
     background: white;
 }
@@ -250,12 +244,6 @@ input:hover,button:hover, .connect:hover, .deconnection:hover {
     text-align: center;
 }
 
-.connect, .deconnection {
-    margin: 10px;
-    width: auto;
-    text-align: center;
-}
-
 #resultat_creaPage.textarea {
     margin-top: 5px;
     margin-left: 10px;
@@ -280,6 +268,8 @@ button:hover {
 .ui-autocomplete li {
     padding-left: 0.5em;
     width: 7em;
+    position: relative;
+    left: -25px;
     background: white;
     border-left: 0.1em solid grey;
     border-bottom: 0.1em solid grey;
@@ -468,6 +458,10 @@ button:hover {
     }
     .photo.photo-margin {
         margin: 2.5px;
+    }
+    #resultat_creaPage {
+    display: flex;
+    flex-direction: column;
     }
 }
 

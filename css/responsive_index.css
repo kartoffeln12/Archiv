@@ -9,20 +9,20 @@ footer {
 }
 
 body {
-    /*défini la hauteur du body à 100% de la hauteur de l'ecran*/
+    /*défini la hauteur du body à 100% de la hauteur de l'ecran */
     height: 100vh;
     margin: 0;
     padding: 0;
-    /*parametre les enfants de body dans une grille*/
+    /*parametre les enfants de body dans une grille */
     display: grid;
-    /*place 2 colonnes à la grille */
+    /*place 1 colonnes à la grille */
     grid-template-columns: 1fr;
-    /*défini les zones de placement dans la grille avec un nom*/
+    /*défini les zones de placement dans la grille avec un nom */
     grid-template-areas: "header " "section " "footer ";
 }
 
 header {
-    /*affecte la balise header dans la zone de la grille avec le nom header*/
+    /*affecte la balise header dans la zone de la grille avec le nom header */
     grid-area: header;
     height: 120px;
 }
@@ -74,40 +74,58 @@ footer {
 
 
 
-/* écran large 
+/* écran large */
 
 @media screen and (min-width: 1200px) {}
 
-/* tablet de portrait à landscape et desktop 
+/* tablet de portrait à landscape et desktop */
 
 @media screen and (min-width: 768px) and (max-width: 990px) {
+
+    nav a {
+        font-size: 1.5em;
+    }
     section {
         flex-flow: column;
         justify-content: center;
     }
+    #filtre {
+        display: flex;
+        align-items: center;
+    }
     article {
         width: 80%;
-        padding-left: 50px;
     }
     iframe {
         justify-content: center;
     }
 }
 
-/* smartphone landscape à tablet portrait 
+/* smartphone landscape à tablet portrait */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-areas: "header" "nav" "section" "aside" "footer";
+        grid-template-areas: "header" "nav" "section" "footer";
+    }
+    header {
+        height: 125px;
     }
     nav a {
-        font-size: 2em;
+        font-size: 1.2em;
+        margin: 1px;
     }
     section {
         display: flex;
         flex-flow: column;
-        padding-left: 15%;
+    }
+    #filtre {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    #sort-by {
+        display: none; 
     }
     article {
         padding: 2%;
@@ -126,4 +144,3 @@ footer {
 
 
 }
-*/

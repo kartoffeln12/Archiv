@@ -4,7 +4,7 @@ $nav_en_cours = 'archive';
 ?>
 
             <div id="filtre">
-                <form method="post" action="index.php?page=archive">
+                <form id="sort-by" method="post" action="index.php?page=archive">
 
                     Trier :
                     <label for="trier">
