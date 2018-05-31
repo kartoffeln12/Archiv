@@ -2,25 +2,17 @@
 
 session_start();
 
-if (isset($_ENV['MYSQL_HOST']) && $_ENV['MYSQL_HOST'] == 'db_Projet') {
-define('DSN', 'mysql:host=db_Projet;dbname=projet');
-define('USER', 'quentin');
-define('MDP', '#grab12');
+$_ENV = parse_ini_file('.env');
 
-} else {
-define('DSN', 'mysql:host=localhost;dbname=projet');
-define('USER', 'root');
-define('MDP', '');
+if ($_ENV['DEBUG']) {
+	error_reporting(E_ALL);
 }
 
-try {
-	$bdd = new PDO(DSN, USER, MDP, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) {
-	echo "Erreur : ".$e->getMessage();
-}
+require 'classes/Database.php';
+$bdd = new Database($_ENV['MYSQL_HOST'], $_ENV['MYSQL_DATABASE'], $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD']);
+$bdd = $bdd->getPdo();
 
 require 'classes/events.php';
-$Events = new Events();
+$Events = new Events($bdd);
 
 ?>

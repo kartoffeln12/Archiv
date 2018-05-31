@@ -2,6 +2,13 @@
 
 class Events {
 
+    private $bdd;
+
+    function __construct($bdd) 
+    {
+        $this->bdd = $bdd;
+    }
+
     /**
      * Recherche dans la base des events passés.
      *
@@ -11,8 +18,6 @@ class Events {
      */
     function recherche($request) 
     {
-        global $bdd;
-
         $recherche = isset($request['recherche']) ? $request['recherche'] : NULL;
         $filtre = isset($request['filtre']) ? $request['filtre'] : NULL;
 
@@ -34,7 +39,7 @@ class Events {
                 ORDER BY jour DESC";   
         }
 
-        $reponse = $bdd->query($q);
+        $reponse = $this->bdd->query($q);
 
         return $reponse;
     }
@@ -47,10 +52,8 @@ class Events {
      * @return la reponse.
      */
     function rechercheFuturEvents($request) 
-    {
-        global $bdd;
-
-        $reponse = $bdd->query("SELECT * FROM crea_page WHERE jour >= CURDATE()");
+    {  
+        $reponse = $this->bdd->query("SELECT * FROM crea_page WHERE jour >= CURDATE()");
 
         return $reponse;
     }
@@ -65,8 +68,7 @@ class Events {
      */
     function photosEvents($request) 
     {
-        global $bdd;
-        $reponse = $bdd->query('SELECT upload_filename, user.login
+        $reponse = $this->bdd->query('SELECT upload_filename, user.login
             FROM upload 
                 INNER JOIN crea_page ON upload.crea_page_id=crea_page.id 
                 INNER JOIN user ON upload.user_id=user.id
@@ -86,9 +88,7 @@ class Events {
      */ 
     function userEvents($request) 
     {   
-        global $bdd;
-
-        $reponse = $bdd->query('SELECT crea_page.id, affiche, titre, user_id, user.login
+        $reponse = $this->bdd->query('SELECT crea_page.id, affiche, titre, user_id, user.login
             FROM crea_page 
                 INNER JOIN user ON crea_page.user_id=user.id
             WHERE   
@@ -106,9 +106,7 @@ class Events {
      */
     function totalPhotoByEvent($id) 
     {
-        global $bdd;
-
-        $reponse = $bdd->query('SELECT count(id) as total FROM `upload` WHERE crea_page_id = '.$id.'');
+        $reponse = $this->bdd->query('SELECT count(id) as total FROM `upload` WHERE crea_page_id = '.$id.'');
         $donnee = $reponse->fetch();
 
         return $donnee['total'];
@@ -124,9 +122,7 @@ class Events {
      */ 
     function userPhotos($request) 
     {   
-        global $bdd;
-
-        $reponse = $bdd->query('SELECT crea_page_id, user_id, upload_filename,  user.login
+        $reponse = $this->bdd->query('SELECT crea_page_id, user_id, upload_filename,  user.login
             FROM upload 
                 INNER JOIN user ON upload.user_id=user.id
             WHERE   
@@ -144,9 +140,7 @@ class Events {
      */
     function showEvent($request) 
     {
-        global $bdd;
-
-        $reponse = $bdd->query('SELECT * FROM `crea_page` WHERE `id` = ' . (int) $request['id']);
+        $reponse = $this->bdd->query('SELECT * FROM `crea_page` WHERE `id` = ' . (int) $request['id']);
         $donnee = $reponse->fetch();
 
         return $donnee;
@@ -161,8 +155,6 @@ class Events {
      */
     function createEvent($request) 
     {
-        global $bdd;
-
         $affiche = isset($request['affiche']) ? $request['affiche'] : NULL;
         $titre = isset($request['titre']) ? $request['titre'] : NULL;
         $lieu = isset($request['lieu']) ? $request['lieu'] : NULL;
@@ -171,9 +163,9 @@ class Events {
         $description = isset($request['description']) ? substr($request['description'], 0, 255) : NULL;
         $user_id = $_SESSION['Auth']['id'];        
 
-        $sql = $bdd->prepare("INSERT INTO crea_page(affiche, titre, lieu, horaire, jour, description, user_id, date_create) VALUES (?,?,?,?,?,?,?,NOW())");
+        $sql = $this->bdd->prepare("INSERT INTO crea_page(affiche, titre, lieu, horaire, jour, description, user_id, date_create) VALUES (?,?,?,?,?,?,?,NOW())");
         $sql->execute(array($affiche, $titre, $lieu, $horaire, $jour, $description, $user_id));
-        $id = $bdd->lastInsertId();
+        $id = $this->bdd->lastInsertId();
 
         return $id;
     }   
@@ -187,9 +179,7 @@ class Events {
      */
     function outBdd($request) 
     {
-        global $bdd;
-
-        $reponse = $bdd->query('SELECT * FROM `crea_page` WHERE lieu NOT IN (SELECT nom_lieu FROM lieux)');
+        $reponse = $this->bdd->query('SELECT * FROM `crea_page` WHERE lieu NOT IN (SELECT nom_lieu FROM lieux)');
         $donnee = $reponse->fetch();
 
         return $reponse;
